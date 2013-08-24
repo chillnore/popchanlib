@@ -1,0 +1,34 @@
+//显示类
+BitmapText		位图文本
+ScrollBitmapText 数字可滚动变化的位图文本
+BitmapAnimation 位图动画，支持帧频,播放次数，顺序倒序播放，自定义播放序列
+ClipAnimation   mc动画，支持帧频,播放次数，顺序倒序播放，自定义播放序列
+//ui类
+提供一套UI(待完成)
+Label,Button,CheckBox,Slider,ComboBox,List,Panel,Tree,Text,TextArea;
+UI编辑器，结束程序苦逼拼面板时代
+//工具类
+BitmapUtil 位图裁切，位图9宫格，将mc转化为位图序列
+StringUtil 字符串过滤，替换等
+TimeUtil 时间格式化
+FilterUtil 滤镜工具，给对象添加，移出滤镜，灰度滤镜，对象发光，描边等
+MathUtil 数学工具，判断奇偶，产生随机数等
+ObjectPool 对象池工具
+ObjectUtil 对象工具，克隆对象，判断对象是否为空等
+ColorUtil 颜色工具
+GeomUtil 几何类 
+SwfFileRead 获取swf文件所有的类定义
+//算法类
+Astar 寻路
+BinaryHeap 二叉堆
+//调试类
+//管理类
+ExternalInterfaceManager 与js通讯封装 设置主页，退出询问，刷新，设置cookie，加入收藏夹等
+SoundManager 音效管理
+ToolTipManager 提示管理
+LocalManager本地存储管理
+//时间类
+BasicTimer 比较精确的Timer类
+Interval
+//jsfl工具
+快速设置九宫格
