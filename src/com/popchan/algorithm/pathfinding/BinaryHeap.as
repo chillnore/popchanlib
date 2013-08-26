@@ -1,9 +1,9 @@
-package com.popchan.algorithm.findpath
+package com.popchan.algorithm.pathfinding
 {
 	import flash.utils.getTimer;
 	
 	/**
-	 *二叉堆 用于优化寻路
+	 *二叉堆之最小堆 用于优化寻路
 	 *Feedback zingblue@163.com,zingblue@gmail.com
 	 *Copyright 2012,chenbo,All rights reserved
 	 *
@@ -44,7 +44,6 @@ package com.popchan.algorithm.findpath
 					break;
 				}
 			}
-			//trace("cost"+(getTimer()-t))
 		}
 		/**
 		 *取出第一个数 
@@ -56,36 +55,40 @@ package com.popchan.algorithm.findpath
 			//取出第一个，将末尾的数移到最前，然后和子树比较
 			var value:Object=_data.shift();
 			var len:int=_data.length;
-			if(len==1)
+			if(len<=1)
 				return value;
 			_data.unshift(_data.pop());
 			var pos:int=1;
+			var temp:Object;
 			while(true)
 			{
 				var leftPos:int=pos*2;
 				var rightPos:int=leftPos+1;
-				var min:int=pos;
-				if(leftPos<len)
+				if(leftPos<=len)
 				{
-					if(compare(_data[pos-1],_data[leftPos-1]))
+					var min:int=leftPos;
+					//比较两子节点谁更小
+					if(rightPos<=len&&compare(_data[rightPos-1],_data[leftPos-1]))
 					{
-						min=leftPos;
-					};
-					if(rightPos<len&&compare(_data[rightPos-1],_data[min-1]))
 						min=rightPos;
-					
-				}
-				if(min!=pos)
-				{
-					var temp:Object=_data[pos-1];
-					_data[pos-1]=_data[min-1];
-					_data[min-1]=temp;
-					pos=min;
+					}
+					if(compare(_data[min-1],_data[pos-1]))
+					{
+						temp=_data[pos-1];
+						_data[pos-1]=_data[min-1];
+						_data[min-1]=temp;
+						pos=min;
+					}else
+					{
+						break;
+					}
 				}else
 				{
 					break;
 				}
+			
 			}
+			
 			return value;
 		}
 		/**

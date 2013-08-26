@@ -1,7 +1,6 @@
 package com.popchan.display.bitmap
 {
 	import flash.display.BitmapData;
-
 	/**
 	 *每帧的信息
 	 *Feedback zingblue@163.com,zingblue@gmail.com

@@ -141,6 +141,16 @@ package com.popchan.display.ui.styles
 		/*ScrollPane*/
 		[Embed(source="style.swf", symbol="ScrollPaneBackSkin")]
 		public static var ScrollPaneBackSkin:Class;
+		/*Tree*/
+		[Embed(source="style.swf", symbol="Tree_folderOpenIcon")]
+		public static var TreeFolderOpenIcon:Class;
+		[Embed(source="style.swf", symbol="Tree_folderClosedIcon")]
+		public static var TreeFolderClosedIcon:Class;
+		/*ToolTip*/
+		[Embed(source="style.swf", symbol="ToolTip_borderSkin")]
+		public static var TooTipBackSkin:Class;
+		
+		
 		private static var _instance:StyleAssets=new StyleAssets();
 		/**
 		 *获取类 

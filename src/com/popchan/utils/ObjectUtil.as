@@ -1,5 +1,9 @@
 package com.popchan.utils
 {
+	import flash.display.DisplayObject;
+	import flash.geom.Matrix;
+	import flash.geom.Rectangle;
+	import flash.geom.Transform;
 	import flash.net.registerClassAlias;
 	import flash.utils.ByteArray;
 	import flash.utils.getDefinitionByName;
@@ -70,6 +74,27 @@ package com.popchan.utils
 			copier.writeObject(source);
 			copier.position = 0;
 			return copier.readObject();
+		}
+		/**
+		 *得到 displayObject的区域 解决多次设置displayObject.scrollRect后displayObject的宽高变成了scrollRect中设置的宽高问题
+		 * @param displayObject
+		 * @return 
+		 * 
+		 */
+		static public  function getFullBounds(displayObject:DisplayObject):Rectangle
+		{
+			var bounds:Rectangle;
+			var transform:Transform=displayObject.transform;
+			var toGlobalMatrix:Matrix;
+			var currentMatrix:Matrix;
+			
+			currentMatrix=transform.matrix;
+			toGlobalMatrix=transform.concatenatedMatrix;
+			toGlobalMatrix.invert();
+			transform.matrix=toGlobalMatrix;
+			bounds=transform.pixelBounds.clone();
+			transform.matrix=currentMatrix;
+			return bounds;
 		}
 	}
 }

@@ -8,7 +8,6 @@ package com.popchan.display.bitmap
 	import flash.events.Event;
 	import flash.events.TimerEvent;
 	import flash.utils.setTimeout;
-	
 	/**
 	 *位图动画 
 	 *Feedback zingblue@163.com,zingblue@gmail.com
@@ -68,7 +67,7 @@ package com.popchan.display.bitmap
 			{
 				_frames=value;
 				addSequence("all",1,_frames.length);
-				sequence="all";
+				currentSequence="all";
 				_totalFrames=_frames.length;
 			}
 		}
@@ -232,7 +231,7 @@ package com.popchan.display.bitmap
 			{
 				if (_currentSequence.nextSequenceDelay<=0)
 				{
-					sequence = _currentSequence.nextSequence;
+					currentSequence = _currentSequence.nextSequence;
 					play();
 				}
 				else
@@ -240,7 +239,7 @@ package com.popchan.display.bitmap
 					setTimeout(
 						function():void 
 						{
-							sequence = _currentSequence.nextSequence;
+							currentSequence = _currentSequence.nextSequence;
 							play();
 						}, _currentSequence.nextSequenceDelay);
 				}
@@ -397,7 +396,7 @@ package com.popchan.display.bitmap
 		 * @return 
 		 * 
 		 */
-		public function get sequence():String
+		public function get currentSequence():String
 		{
 			if(_currentSequence)return _currentSequence.name;
 			return null;
@@ -407,7 +406,7 @@ package com.popchan.display.bitmap
 		 * 设置当前播放的动画序列名称
 		 * @private
 		 */
-		public function set sequence(value:String):void
+		public function set currentSequence(value:String):void
 		{
 			_currentSequence=_sequences[value];
 			if(_currentSequence)
@@ -438,6 +437,15 @@ package com.popchan.display.bitmap
 		public function set smothing(value:Boolean):void
 		{
 			_bitmap.smoothing=value;
+		}
+		/**
+		 *释放资源 
+		 * 
+		 */
+		public function dispose():void
+		{
+			stop();
+			_scripts=null;
 		}
 		
 	}

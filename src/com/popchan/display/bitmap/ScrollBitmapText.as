@@ -26,10 +26,10 @@ package com.popchan.display.bitmap
 		 */
 		public function scroll(fromValue:int,toValue:int,time:Number=1,delay:Number=0,onCompleteFun:Function=null,onUpdateFun:Function=null):void
 		{
-			//_onCompleteFun=onCompleteFun;
-			//_onUpdateFun=onUpdateFun;
-			/*var obj:Object={value:fromValue};
-			TweenMax.to(obj,time,{value:toValue,delay:delay,
+			
+			var obj:Object={value:fromValue};
+			
+			/*twe.to(obj,time,{value:toValue,delay:delay,
 				onUpdate:function():void
 				{
 					text=int(obj.value).toString();

@@ -1,6 +1,7 @@
 package com.popchan.display.ui
 {
 	import flash.display.DisplayObjectContainer;
+	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
 	/**
@@ -23,11 +24,24 @@ package com.popchan.display.ui
 		override protected function createChildren():void
 		{
 			_tf=new TextField();
-			_tf.textColor=0x00ffff;
+			_tf.textColor=0xffffff;
 			_tf.autoSize="left";
 			_tf.selectable=false;
 			
 			addChild(_tf);
+			
+			this.addEventListener(MouseEvent.ROLL_OVER,onOver);
+			this.addEventListener(MouseEvent.ROLL_OUT,onOut);
+		}
+		
+		protected function onOut(event:MouseEvent):void
+		{
+			this.alpha=1;
+		}
+		
+		protected function onOver(event:MouseEvent):void
+		{
+			this.alpha=.5;
 		}
 		public function get data():Object
 		{
@@ -49,12 +63,12 @@ package com.popchan.display.ui
 				graphics.clear();
 				if(_selected)
 				{
-					graphics.beginFill(0xeeeeee);
+					graphics.beginFill(0xff0000);
 				}else
 				{
 					graphics.beginFill(_index%2?0x666666:0x999999);	
 				}
-				graphics.drawRect(0,0,100,50);
+				graphics.drawRect(0,0,100,39);
 				graphics.endFill();
 			}
 		}

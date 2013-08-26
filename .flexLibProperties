@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+  <includeClasses>
+    <classEntry path="com.popchan.display.ui.Tree"/>
+    <classEntry path="com.popchan.display.ui.ITreeCell"/>
+    <classEntry path="com.popchan.display.ui.TreeFolderCell"/>
+    <classEntry path="com.popchan.display.ui.TreeItemCell"/>
+    <classEntry path="com.popchan.display.ui.ToolTip"/>
+    <classEntry path="com.popchan.debug.LogSender"/>
+    <classEntry path="com.popchan.algorithm.rpg.GamePointUtil"/>
+    <classEntry path="com.popchan.algorithm.pathfinding.TileVO"/>
+    <classEntry path="com.popchan.algorithm.pathfinding.TileWorld"/>
+    <classEntry path="com.popchan.algorithm.pathfinding.AStar"/>
+    <classEntry path="com.popchan.display.ui.Wireframe"/>
+    <classEntry path="com.popchan.display.component.Page"/>
+    <classEntry path="com.popchan.display.component.CheckBox"/>
+    <classEntry path="com.popchan.display.component.Image"/>
+    <classEntry path="com.popchan.display.component.ScrollPolicy"/>
+    <classEntry path="com.popchan.display.component.IListCell"/>
+    <classEntry path="com.popchan.display.component.ListCell"/>
+    <classEntry path="com.popchan.utils.SwfUtil"/>
+    <classEntry path="com.popchan.display.ui.SkinAssets"/>
+    <classEntry path="com.popchan.debug.Log"/>
+    <classEntry path="com.popchan.display.component.SliderBase"/>
+    <classEntry path="com.popchan.display.component.HSlider"/>
+    <classEntry path="com.popchan.display.component.VSlider"/>
+    <classEntry path="com.popchan.display.component.ScrollBarSlider"/>
+    <classEntry path="com.popchan.display.component.ScrollBar"/>
+    <classEntry path="com.popchan.display.component.List"/>
+    <classEntry path="com.popchan.display.component.ComboBox"/>
+    <classEntry path="com.popchan.display.component.TextInput"/>
+    <classEntry path="com.popchan.display.component.VScrollBar"/>
+    <classEntry path="com.popchan.display.component.TextArea"/>
+    <classEntry path="com.popchan.display.component.HScrollBar"/>
+    <classEntry path="com.popchan.display.component.Box"/>
+    <classEntry path="com.popchan.display.component.HBox"/>
+    <classEntry path="com.popchan.display.component.VBox"/>
+    <classEntry path="com.popchan.display.component.Tree"/>
+    <classEntry path="com.popchan.display.component.RadioButton"/>
+    <classEntry path="com.popchan.display.component.RadioButtonGroup"/>
+    <classEntry path="com.popchan.display.component.Label"/>
+    <classEntry path="com.popchan.display.component.Text"/>
+    <classEntry path="com.popchan.display.component.NumericStepper"/>
+    <classEntry path="com.popchan.display.component.ProgressBar"/>
+    <classEntry path="com.popchan.display.component.ToolTip"/>
+    <classEntry path="com.popchan.display.component.IToolTip"/>
+    <classEntry path="com.popchan.display.component.TabView"/>
+    <classEntry path="com.popchan.display.component.GridUI"/>
+    <classEntry path="com.popchan.display.component.Window"/>
+    <classEntry path="com.popchan.algorithm.line.LineGenerateCore"/>
+    <classEntry path="com.popchan.loader.core.PopLoader"/>
+    <classEntry path="com.popchan.loader.files.IFile"/>
+    <classEntry path="com.popchan.loader.files.TextFile"/>
+    <classEntry path="com.popchan.loader.handlers.LoaderBase"/>
+    <classEntry path="com.popchan.loader.files.ByteArrayFile"/>
+    <classEntry path="com.popchan.loader.files.SoundFile"/>
+    <classEntry path="com.popchan.loader.files.SwfFile"/>
+    <classEntry path="com.popchan.loader.files.ImageFile"/>
+    <classEntry path="com.popchan.loader.handlers.ImageLoader"/>
+    <classEntry path="com.popchan.loader.events.PopLoaderEvent"/>
+    <classEntry path="com.popchan.debug.Debug"/>
+    <classEntry path="com.popchan.net.socket.SocketEvent"/>
+    <classEntry path="com.popchan.net.socket.SocketClient"/>
+    <classEntry path="com.popchan.net.socket.IMessageHandler"/>
+    <classEntry path="com.popchan.manager.MessageManager"/>
+    <classEntry path="com.popchan.loader.core.LoaderType"/>
+    <classEntry path="com.popchan.loader.handlers.SWFLoader"/>
+    <classEntry path="com.popchan.loader.handlers.BinaryLoader"/>
+    <classEntry path="com.popchan.loader.handlers.TextLoader"/>
+    <classEntry path="com.popchan.loader.handlers.XMLLoader"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>

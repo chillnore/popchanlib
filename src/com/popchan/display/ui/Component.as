@@ -146,8 +146,8 @@ package com.popchan.display.ui
 		 */
 		public function validateNow():void
 		{
-			invalidate(CallLaterType.ALL,false);
 			runCallLaterMethod();
+			clearCallLater();
 		}
 		/**
 		 *清除标记的属性 

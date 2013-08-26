@@ -96,6 +96,7 @@ package com.popchan.display.ui
 			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onLoaded);
 			_loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,onLoadedProgress);
 			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,onLoadedError);
+			
 			_loader.load(_urlRequest);
 		}
 		

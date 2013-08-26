@@ -71,6 +71,10 @@ package com.popchan.manager
 		{
 			return _so.data[key];	
 		}
+		public function getData():Object
+		{
+			return _so.data;
+		}
 		/**
 		 *清除保存到本地的数据 
 		 * 

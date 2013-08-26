@@ -1,12 +1,13 @@
 package com.popchan.utils
 {
 	
+	import com.popchan.display.bitmap.BitmapFrameInfo;
+	
 	import flash.display.BitmapData;
 	import flash.display.MovieClip;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import com.popchan.display.bitmap.BitmapFrameInfo;
 	
 
 	/**
@@ -118,6 +119,28 @@ package com.popchan.utils
 				}
 				mc.nextFrame();
 				i++;
+			}
+			return list;
+		}
+		/**
+		 *切割位图
+		 * @param source
+		 * @param tilesPreRow
+		 * 
+		 */
+		public static function trimBmd(source:BitmapData,rowCount:int,colCount:int):Array
+		{
+			var list:Array=[];
+			var rowHeight:int=source.height/rowCount;
+			var colWidth:int=source.width/colCount;
+			for(var i:int=0;i<rowCount;i++)
+			{
+				for(var j:int=0;j<colCount;j++)
+				{
+					var bmd:BitmapData=new BitmapData(colWidth,rowHeight,true,0);
+					bmd.copyPixels(source,new Rectangle(j*colWidth,i*rowHeight,colWidth,rowHeight),new Point(0,0));
+					list.push(bmd);
+				}
 			}
 			return list;
 		}

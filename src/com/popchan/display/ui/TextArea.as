@@ -16,7 +16,7 @@ package com.popchan.display.ui
 	public class TextArea extends Component
 	{
 		protected var _scrollBar:VScrollBar;
-		protected var _text:String;
+		protected var _text:String="";
 		protected var _isHtml:Boolean;
 		protected var _tf:TextField;
 		protected var _back:Sprite;
@@ -134,7 +134,7 @@ package com.popchan.display.ui
 					_tf.htmlText=_text;
 				else
 					_tf.text=_text;
-				_scrollBar.setScrollBarProperties(1,_tf.maxScrollV,1);
+				_scrollBar.setScrollBarProperties(1,_tf.maxScrollV,_tf.maxScrollV);
 				_scrollBar.setThumbPercent((_tf.numLines-_tf.maxScrollV+1)/_tf.numLines);
 				_scrollBar.validateNow();
 				if(!_scrollBar.visible)
@@ -216,6 +216,15 @@ package com.popchan.display.ui
 		public function get maxChars():int
 		{
 			return _tf.maxChars;
+		}
+		/**
+		 *追加文本 
+		 * @param value
+		 * 
+		 */
+		public function appendText(value:String):void
+		{
+			_tf.appendText(value);
 		}
 		
 	}

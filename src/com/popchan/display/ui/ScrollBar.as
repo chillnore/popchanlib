@@ -75,7 +75,7 @@ package com.popchan.display.ui
 		override protected function createChildren():void
 		{
 			_slider=new ScrollBarSlider(this,0,0,SliderDirection.VERTICAL);
-			_slider.thumbPercent=.2;
+			_slider.thumbPercent=1;
 			_slider.snapInterval=0.01;
 			_slider.autoRepeat=true;
 			_slider.setSize(_width,_height);
@@ -114,17 +114,10 @@ package com.popchan.display.ui
 				
 				_slider.height=_height-_upBtn.height-_downBtn.height;
 				_slider.y=_upBtn.height;
-				//_slider.width=_width;
 				_downBtn.y=_height-_upBtn.height;
 				
 				if(_direction==SliderDirection.HORIZONTAL)
 				{
-					//_upBtn.x=0;
-					//_slider.width=_width-_upBtn.width*2;
-					//_slider.x=_upBtn.width;
-					//_slider.height=_height;
-					//_downBtn.x=_width-_upBtn.width;
-					
 					rotation=-90;
 					scaleX=-1;
 				}else
@@ -132,16 +125,16 @@ package com.popchan.display.ui
 					rotation=0;
 					scaleX=1;
 				}
-				setThumbVisible();
+				setScrollBarVisible();
 				
 			}
 			clearCallLater();
 		}
 		/**
-		 *设置thumb的显示 
+		 *设置滚动条的显示 
 		 * 
 		 */
-		protected function setThumbVisible():void
+		protected function setScrollBarVisible():void
 		{
 			//设置滚动条thumb显示方式
 			if(_policy==ScrollPolicy.OFF)
@@ -230,7 +223,7 @@ package com.popchan.display.ui
 		public function setThumbPercent(value:Number):void
 		{
 			_slider.thumbPercent=value;
-			setThumbVisible();
+			setScrollBarVisible();
 		}
 		/**
 		 *设置滚动条属性 
@@ -244,7 +237,25 @@ package com.popchan.display.ui
 			_slider.minimum=min;
 			_slider.maximum=max;
 			_slider.value=value;
-			
+		}
+		/**
+		 *配置滚动条 
+		 * @param min
+		 * @param max
+		 * @param value
+		 * @param pageScrollSize
+		 * @param thumbPercent
+		 * 
+		 */
+		public function config(min:Number,max:Number,value:Number,pageScrollSize:int,thumbPercent:Number):void
+		{
+			_slider.thumbPercent=thumbPercent;
+			_slider.validateNow();
+			_slider.minimum=min;
+			_slider.maximum=max;
+			_slider.pageScrollSize=pageScrollSize;
+			_slider.value=value;
+			setScrollBarVisible();
 		}
 		/**
 		 *滚动条显示策略 ScrollPolicy.AUTO ON OFF 
@@ -258,7 +269,7 @@ package com.popchan.display.ui
 		public function set policy(value:String):void
 		{
 			_policy=value;
-			setThumbVisible();
+			setScrollBarVisible();
 		}
 		
 	

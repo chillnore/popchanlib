@@ -7,6 +7,7 @@ package com.popchan.display.ui
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
+	
 	/**
 	 *用于滚动条的slider (增加了调整thumb的百分比,设置_pageScrollSize)
 	 *Feedback zingblue@163.com,zingblue@gmail.com
@@ -28,8 +29,6 @@ package com.popchan.display.ui
 		
 		override protected function createChildren():void
 		{
-			
-			super.createChildren();
 			_timer=new Timer(_repeatDelay);
 			_timer.addEventListener(TimerEvent.TIMER,onRepeat);
 		}
@@ -92,6 +91,7 @@ package com.popchan.display.ui
 		{
 			_thumbPercent =Math.min(1.0,value);
 			_thumb.visible=_thumbPercent<1;
+			
 			
 			invalidate(CallLaterType.SIZE);
 		}

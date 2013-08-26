@@ -36,7 +36,7 @@ package com.popchan.display.screen
 									className:Class, data:Object=null,
 									returnFunction:Function=null,
 									x:Number=NaN,y:Number=NaN,
-									modal:Boolean=false):BaseScreen
+									modal:Boolean=true):BaseScreen
 		{
 			var dialog:BaseScreen;
 			if(dialogs[className]!=null)

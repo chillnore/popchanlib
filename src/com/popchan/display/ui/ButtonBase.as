@@ -7,7 +7,7 @@ package com.popchan.display.ui
 	import flash.utils.Timer;
 	
 	/**
-	 *按钮基类 
+	 *按钮基类  
 	 * 	公共属性
 	 * 			1.autoRepeat 当鼠标按下的时候是否一直分发ButtonDown事件
 	 * 			1.repeatDelay 第一次延迟多少毫秒分发buttonDown事件
@@ -43,6 +43,8 @@ package com.popchan.display.ui
 				downSkin:"ButtonDown",
 				disabledSkin:"ButtonDisabled"
 			};
+		/*皮肤映射w*/
+		private var _skinMap:Object={up:0,over:1,down:2,disabled:3};
 		
 		public function ButtonBase(parent:DisplayObjectContainer=null, x:Number=0, y:Number=0)
 		{
@@ -51,8 +53,6 @@ package com.popchan.display.ui
 		
 		override protected function preInit():void
 		{
-			
-			
 			_skin=_defaultSkin;
 			_width=80;
 			_height=24;
@@ -207,13 +207,6 @@ package com.popchan.display.ui
 		public function set repeatInterval(value:Number):void
 		{
 			_repeatInterval = value;
-		}
-		
-		
-		
-		
-		
-		
-		
+		}	
 	}
 }

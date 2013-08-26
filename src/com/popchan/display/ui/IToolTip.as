@@ -9,8 +9,8 @@ package com.popchan.display.ui
 	 */
 	public interface IToolTip
 	{
-		function set data(value:ToolTipData):void;
-		function get data():ToolTipData;
+		function set data(value:Object):void;
+		function get data():Object;
 		function destory():void;
 	}
 }

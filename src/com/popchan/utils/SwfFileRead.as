@@ -2,7 +2,7 @@ package com.popchan.utils
 {
 	import flash.utils.ByteArray;
 	import flash.utils.Endian;
-
+	
 	/**
 	 *swf文件读取
 	 *Feedback zingblue@163.com,zingblue@gmail.com
@@ -39,7 +39,8 @@ package com.popchan.utils
 					{
 						by.readShort();
 						size=by.position;
-						while(by.readByte()!=0);
+						while(by.readByte()!=0)
+						{};
 						size=by.position-(by.position=size);
 						list.push(by.readUTFBytes(size));
 					}
